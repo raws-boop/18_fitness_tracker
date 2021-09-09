@@ -1,23 +1,12 @@
 const router =require ("express").Router()
+const db =required("../models")
 
 
 
-
-
-app.get("/notes", (req, res) => {
-    db.Note.find({})
+router.get("/", (req, res) => {
+  db.Workout.find({})
       .then((dbNote) => {
         res.json(dbNote);
-      })
-      .catch((err) => {
-        res.json(err);
-      });
-  });
-
-  app.get("/user", (req, res) => {
-    db.User.find({})
-      .then((dbUser) => {
-        res.json(dbUser);
       })
       .catch((err) => {
         res.json(err);
